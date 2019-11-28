@@ -1,22 +1,112 @@
-.App {
+#root {
+  height: 100vh;
+  width: 100vw;
+  background-color: #25061d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.App h1 {
+  color: white;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.BeautyContainer {
+  font-family: 'Oswald', sans-serif;
+  margin-top: 10em;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #09d3ac;
+.beauty-content{
+  overflow: hidden;
+  background: linear-gradient(#65c9fc, #89d3f6);
+  border-radius: 10px;
+  height: 600px;
+  width: 400px;
+}
+
+.beauty-content .nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 7% 7%;
+}
+
+.beauty-content .nav i {
+  color: #c3e9fd;
+  font-size: 23px;
+}
+
+.BeautyContainer .api-content {
+  color: white;
+  text-align: center;
+  margin-top: 8vh;
+}
+
+
+.BeautyContainer .city {
+  letter-spacing: 3px;
+  font-size: 25px
+}
+
+.BeautyContainer .weather {
+  letter-spacing: 2px;
+  font-size: 20px;
+}
+
+.BeautyContainer .degrees {
+  margin-top: 20px;
+  font-size: 100px;
+  letter-spacing: 10px;
+}
+
+.BeautyContainer .objects {
+  position: relative;
+}
+
+.BeautyContainer .clouds {
+  margin-top: 30px;
+  background: url("./img/clouds.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 500px;
+  height: 100px;
+  transform: translateX(-15%);
+  opacity: 0.5;
+}
+
+.BeautyContainer .sea {
+  position: absolute;
+  top: 90%;
+  width: 100%;
+  background: linear-gradient(#22a8d5, #2bcada);
+  height: 120px;
+  z-index: 2;
+}
+
+.BeautyContainer .sea img {
+  position: absolute;
+  top: -25%;
+  right: 0%;
+  width: 25%;
+  animation: sail 5s infinite;
+  animation-timing-function: linear;
+
+
+}
+
+@keyframes sail {
+  0% {
+    right: -25%;
+  }
+ 
+  100% {
+    right: 100%;
+  }
 }
