@@ -10,15 +10,15 @@
   box-sizing: border-box;
 }
 
-
-.App h1 {
+h1 {
   color: white;
   text-align: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .BeautyContainer {
   font-family: 'Oswald', sans-serif;
-  margin-top: 10em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,7 +57,12 @@
 
 .BeautyContainer .weather {
   letter-spacing: 2px;
+  text-transform: capitalize;
   font-size: 20px;
+}
+
+.BeautyContainer span {
+  content: "\00B0";
 }
 
 .BeautyContainer .degrees {
@@ -97,8 +102,6 @@
   width: 25%;
   animation: sail 5s infinite;
   animation-timing-function: linear;
-
-
 }
 
 @keyframes sail {
@@ -109,4 +112,155 @@
   100% {
     right: 100%;
   }
+}
+
+.RainyContainer {
+  font-family: 'Oswald', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.rainy-content{
+  overflow: hidden;
+  /* background: linear-gradient(#23194b ,#716fc8); */
+  /* background: linear-gradient(-120deg, #23194b, #716fc8); */
+  /* background: linear-gradient(-45deg, #23194b, #716fc8, #23194b, #23a6d5, #716fc8 ); */
+  /* background-position: 600%; */
+  background-image: linear-gradient(-120deg, #23194b, #716fc8);
+  background-size: auto 200%;
+  background-position: 0 100%;
+  /* background-size: cover; */
+  border-radius: 10px;
+  height: 600px;  
+  width: 400px;
+  animation: sky 10s ease infinite;
+}
+
+@-webkit-keyframes sky {
+  0%{background-position:10% 0%}
+  50%{background-position:91% 100%}
+  100%{background-position:10% 0%}
+}
+@-moz-keyframes sky {
+  0%{background-position:10% 0%}
+  50%{background-position:91% 100%}
+  100%{background-position:10% 0%}
+}
+@keyframes sky { 
+  0%{background-position:10% 0%}
+  50%{background-position:91% 100%}
+  100%{background-position:10% 0%}
+}
+  
+
+.rainy-content .nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 7% 7%;
+}
+
+.rainy-content .nav i {
+  color: #c3e9fd;
+  font-size: 23px;
+}
+
+.RainyContainer .api-content {
+  color: white;
+  text-align: center;
+  margin-top: 8vh;
+}
+
+
+.RainyContainer .city {
+  letter-spacing: 3px;
+  font-size: 25px
+}
+
+.RainyContainer .weather {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  font-size: 20px;
+}
+
+.RainyContainer span {
+  content: "\00B0";
+}
+
+.RainyContainer .degrees {
+  margin-top: 20px;
+  font-size: 100px;
+  letter-spacing: 10px;
+}
+
+.RainyContainer .objects {
+  position: relative;
+  width: 100%;
+}
+
+ .RainyContainer .mountains img { 
+  position: absolute;
+  bottom: -300px;
+  width: 100%;
+  height: 420px;
+  z-index: 1;
+}
+
+.RainyContainer .moon img {
+  position: absolute;
+  bottom: -140px;
+  left: 0px;
+  height: 100px;
+  width: 100px;
+  animation: shine 10s ease infinite;
+}
+
+@keyframes shine {
+0%{
+  bottom: -140px;
+  left: 0px;
+}
+
+50%{
+  transform: scale(1.4);
+}
+
+100%{
+  bottom: 80px;
+  left: 400px;
+  }
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  margin: 20px auto;
+}
+
+form input {
+  height: 4.5vh;
+  width: 85%;
+  padding-left: 15px;
+  border-radius: 15px;
+  background-color: rgba(255,255,255,0.3);
+  color: white;
+  border-style: none;
+  text-transform: uppercase;
+}
+
+form input::placeholder {
+  color: white;
+  text-transform: uppercase;
+
+}
+
+form button {
+  height: 4.5vh;
+  border-radius: 15px;
+  width: 20%;
+  background-color: white;
+  border-style: none;
 }
