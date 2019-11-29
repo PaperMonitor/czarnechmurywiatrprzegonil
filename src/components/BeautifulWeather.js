@@ -21,7 +21,7 @@ export default class BeautifulWeather extends Component {
                     <div className="boat">
                     </div>
                     <div className="sea">
-                    <img src={boat}></img>
+                    <img src={boat} alt=""></img>
                     </div>
                     </div>
                 </div>

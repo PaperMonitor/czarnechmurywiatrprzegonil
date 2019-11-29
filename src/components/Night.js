@@ -18,10 +18,10 @@ export default class Night extends Component {
                     </div>
                     <div className="objects">
                     <div id="asteroid">
-                        <img src={asteroid}></img>
+                        <img src={asteroid} alt=""></img>
                     </div>
                     <div className="rain">
-                        <img src={rainyclouds}></img>
+                        <img src={rainyclouds} alt=""></img>
                     </div>
                     <div id="flame-wrapper">
                     <div id="red"></div>

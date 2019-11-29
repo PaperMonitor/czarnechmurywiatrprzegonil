@@ -18,10 +18,10 @@ export default class RainyWeather extends Component {
                     </div>
                     <div className="objects">
                     <div className="mountains">
-                        <img src={mountains}></img>
+                        <img src={mountains} alt=""></img>
                     </div>
                     <div className="moon">
-                        <img src={moon}></img>
+                        <img src={moon} alt=""></img>
                     </div>
                     
                     </div>
