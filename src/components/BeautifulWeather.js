@@ -12,7 +12,7 @@ export default class BeautifulWeather extends Component {
                     <i className="fas fa-cog"></i>
                     </div>
                     <div className="api-content">
-        <p className="city">City: {this.props.city}</p>
+                    <p className="city">City: {this.props.city}</p>
                         <p className="weather">Weather: {this.props.weather}</p>
                         <h3 className="degrees">{this.props.temp}<span>&#176;</span></h3>
                     </div>

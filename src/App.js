@@ -15,31 +15,39 @@ class App extends React.Component {
     this.state ={
       city: undefined,
       weather: undefined,
-      temp: undefined
+      temp: undefined,
+      error: false
     };
   }
 
   getWeather = async (e) => {
     e.preventDefault();
     const city = e.target.elements.city.value;
-    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${APIKey}`)
-    const response = await api_call.json();
 
-    this.setState({
-      city: `${response.name}`,
-      weather: response.weather[0].description,
-      temp: Math.round(response.main.temp)
-    })
+    if(city){
+      const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${APIKey}`)
+      const response = await api_call.json();
+  
+      this.setState({
+        city: `${response.name}`,
+        weather: response.weather[0].description,
+        temp: Math.round(response.main.temp)
+      })
+    }else{
+      this.setState({error:true });
+    }
   }
 
   render(){
     return(
       <div className="App">
         <h1>Czarne Chmury Wiatr Przegonił</h1>
-        <BeautifulWeather city={this.state.city} weather={this.state.weather} temp={this.state.temp} theme={"night"}/>
-        <Form loadweather={this.getWeather}/>
-        <Night />
+        <div className="wrapper">
         <RainyWeather />
+        <BeautifulWeather city={this.state.city} weather={this.state.weather} temp={this.state.temp} theme={"night"}/>
+        <Night />
+        </div>
+        <Form loadweather={this.getWeather} error={this.state.error}/>
       </div>
     )
   }
